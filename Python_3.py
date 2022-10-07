@@ -1,4 +1,11 @@
+#Öppna filen för läsning och rensning. pf = puzzle_file. 'r' = read.
+pf = open("pussel_zero.csv", 'r')
+#Avläsning och omvandling till sträng.
+pf_read = str(pf.readlines())
+#print (pf_read.split(','))
+intPuzzleChart = [int(x) for x in pf_read]
 puzzle_string = ""
+
 
 #Pusslets rutnät skapas här.
 def form_grid(puzzle_string):

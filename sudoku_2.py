@@ -9,20 +9,25 @@ from pprint import pprint
 puzzleChart = ""
 puzzleChartDone = []
 intPuzzleChart = ""
-puzzleChart = sys.argv #För att kunna skriva filen som skall öppnas direkt efter programnet
+
+#WITH GARANTERAR ATT FILEN STÄNGS.
+with open("pussel_zero.csv", 'r') as puzzleChart:
+    print(puzzleChart.readlines())
+
+#puzzleChart = sys.argv #För att kunna skriva filen som skall öppnas direkt efter programnet
 #puzzleChart = open("pussel_zero.csv")
-print_sudoku = puzzleChart[1]
-print(print_sudoku)
+#print_sudoku = puzzleChart[1]
+#print(print_sudoku)
 strPuzzleChart = str(puzzleChart)
 print(strPuzzleChart)
-for line in puzzleChart:
-    print (line)
+#for line in puzzleChart:
+ #   print (line)
 
 
 
 
-puzzleChartDone = strPuzzleChart.append([int(i) for i in intPuzzleChart.replace('\n','').split(',')])   #Appendar en städad lista till board.
-intPuzzleChart = [int(x) for x in puzzleChart]
+#puzzleChartDone = strPuzzleChart.append([int(i) for i in intPuzzleChart.replace('\n','').split(',')])   #Appendar en städad lista till board.
+#intPuzzleChart = [int(x) for x in puzzleChart]
 #puzzleChartSTR = str(puzzleChart)
 
 #with open(strPuzzleChart) as csv_file:
@@ -84,5 +89,8 @@ def is_valid(pussel, row, col,):
 if __name__ == '__main__':
     intPuzzleChart2 = [intPuzzleChart]
     print(sudoku_solver(intPuzzleChart))
-    pprint(intPuzzleChart)
+    #pprint(intPuzzleChart)
     #SKRIVA UT TILL EN CSV-FIL
+
+#STÄNGER FILEN 
+puzzleChart.close()
